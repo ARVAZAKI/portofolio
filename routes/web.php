@@ -39,7 +39,7 @@ route::resource('/mastercontact', ContactController::class)->middleware('auth');
 route::resource('/masterproject', ProjectController::class)->middleware('auth');
 
 Route::get('/', function () {
-    return view('/admin.app');
+    return view('/login');
 });
 
 
