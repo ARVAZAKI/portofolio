@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - @yield('title') </title>
+    <title>Arva App - @yield('title') </title>
 
     <!-- Custom fonts for this template-->
     <link href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css>
