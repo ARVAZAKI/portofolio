@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\project;
+use App\Models\Project;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 
