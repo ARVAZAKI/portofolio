@@ -24,3 +24,4 @@ class Kontak extends Model{
 
     }
 }
+;
