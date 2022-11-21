@@ -56,7 +56,7 @@
     function show(id,e) {
         e.preventDefault();
         $.get('/mastercontact/' + id, function(data) {
-            $('#project').html(data);
+            $('#contact').html(data);
         })
     }
     
