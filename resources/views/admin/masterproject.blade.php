@@ -1,6 +1,6 @@
 @extends('admin.app')
 @section('title','Projects')
-@section('content-title','Projects')
+@section('content-title')
 @section('content')
 <div class="row">
     <div class="col-lg-5">
