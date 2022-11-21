@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Kontak;
+use App\Models\Siswa;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -13,8 +14,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
-        return view('admin.mastercontact');
+        $kontak = Kontak::all();
+        $siswa = Siswa::all();
+        return view('admin.mastercontact',compact('kontak','siswa'));
     }
 
     /**
@@ -22,11 +24,10 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
-        return view('createcontact');
-
+        $siswa = Siswa::find($id);
+        return view('createcontact',compact('siswa'));
     }
 
     /**
@@ -37,7 +38,23 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $messages = [
+            'required' => ':attribute harus diisi',
+            'nama' => ':attribute minimal :min karakter',
+            'max' => ':attribute max :max karakter',
+            'numeric' => ':attribute harus angka',
+            'mimes' => 'file :attribute harus bertipe jpg,jpeg,svg,png'
+
+        ];
+        $this->validate($request,[
+            'id_jenis' => 'required',
+            'deskripsi' => 'required'
+        ],$messages);
+        Kontak::create([
+            'id_jenis' => $request->id_jenis,
+            'deskripsi' => $request->deskripsi
+        ]);
+        return redirect('mastercontact');
     }
 
     /**
@@ -48,7 +65,8 @@ class ContactController extends Controller
      */
     public function show($id)
     {
-        return view('showcontact');
+        $data = Siswa::find($id)->kontak()->get();
+        return view('showcontact',compact('data'));
     }
 
     /**
@@ -59,8 +77,8 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        return view('editcontact');
-    }
+        $kontak = Kontak::find($id);
+        return view('editcontact', compact('kontak'));    }
 
     /**
      * Update the specified resource in storage.
@@ -71,7 +89,24 @@ class ContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $messages = [
+            'required' => ':attribute harus diisi',
+            'nama' => ':attribute minimal :min karakter',
+            'max' => ':attribute max :max karakter',
+            'numeric' => ':attribute harus angka',
+            'mimes' => 'file :attribute harus bertipe jpg,jpeg,svg,png'
+
+        ];
+        $this->validate($request,[
+            'id_jenis' => 'required',
+            'deskripsi' => 'required'
+        ],$messages);
+
+        Kontak::create([
+            'id_jenis' => $request->id_jenis,
+            'deskripsi' => $request->deskripsi
+        ]);
+        return redirect('mastercontact');
     }
 
     /**
@@ -82,6 +117,7 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $kontak=Kontak::find($id)->delete();
+        return redirect('mastercontact');
     }
 }

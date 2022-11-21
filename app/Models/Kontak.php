@@ -14,7 +14,7 @@ class Kontak extends Model{
 
     ];
 
-    protected $table = 'Kontak';
+    protected $table = 'kontak';
     public function siswa(){
         return $this->belongsTo('App\Models\Siswa', 'id');
     }
