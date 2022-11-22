@@ -9,8 +9,7 @@ class JenisKontak extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "jenis_kontak",
-        "tipe_kontak"
+        "jenis_kontak"
 
     ];
     protected $table = 'jenis_kontak';
