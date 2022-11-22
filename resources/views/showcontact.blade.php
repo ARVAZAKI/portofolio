@@ -1,5 +1,5 @@
 
-@if ($data->isEmpty())
+@if ($kontak->isEmpty())
 <h6 class="text-center">Siswa tidak memiliki kontak</h6>
 @else
 

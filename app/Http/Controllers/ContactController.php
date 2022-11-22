@@ -14,7 +14,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $data = Kontak::all();
+        $kontak = Kontak::all();
         $siswa = Siswa::all();
         return view('admin.mastercontact',compact('kontak','siswa'));
     }
