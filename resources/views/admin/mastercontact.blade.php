@@ -46,7 +46,7 @@
           <div class="card-header py-3">
         Kontak siswa    
         </div>
-          <div class="card-body" id="project">
+          <div class="card-body" id="contact">
             
           </div>
       </div>
