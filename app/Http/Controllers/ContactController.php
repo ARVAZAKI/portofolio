@@ -53,6 +53,7 @@ class ContactController extends Controller
         Kontak::create([
             'id_siswa' => $request->id_siswa,
             'id_jenis' => $request->id_jenis,
+            'jenis_kontak' => $request->jenis_kontak,
             'deskripsi' => $request->deskripsi
         ]);
         return redirect('mastercontact');
