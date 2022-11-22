@@ -23,8 +23,8 @@
                     @csrf
                     <h3>Create Contact - {{ $siswa->nama }}</h3>
                     <div class = "form-group">
-                        <label for="id_siswa"></label>
-                        <input type="hidden" class="form-control" id="id_siswa" name="id_siswa" value = "{{ $siswa->id}} ">
+                        <label for="id_siswa">id siswa</label>
+                        <input type="text" class="form-control" id="id_siswa" name="id_siswa" value = "{{ $siswa->id}} ">
                     </div>
                     <div class = "form-group">
                         <label for="nama_project">id jenis</label>
