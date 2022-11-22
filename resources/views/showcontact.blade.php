@@ -9,7 +9,7 @@
     {{ $contact->jenis_kontak}}
 </div>
 <div class="card-body">
-    <h6>jenis kontak : {{ $contact->id_jenis}}</h6>
+    <h6>jenis kontak : {{ $contact->jenis_kontak}}</h6>
 
     <h6>Deskripsi kontak : {{ $contact->deskripsi}}</h6>
     
