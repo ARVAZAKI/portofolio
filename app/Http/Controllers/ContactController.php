@@ -118,6 +118,9 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
+        
+    }
+    public function hapus($id){
         $kontak=Kontak::find($id)->delete();
         return redirect('mastercontact');
     }

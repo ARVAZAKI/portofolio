@@ -13,7 +13,7 @@
 </div>
 <div class="card-footer">
     <a href="{{ route('mastercontact.edit',$contact->id)}}" class="btn btn-se btn-warning"><i class="fas fa-edit"></i></a>
-    <a href="{{ route('mastercontact.destroy', $contact->id) }}" class="btn btn-se btn-danger"><i class="fas fa-trash"></i></a>
+    <a href="{{ route('mastercontact.hapus', $contact->id) }}" class="btn btn-se btn-danger"><i class="fas fa-trash"></i></a>
 </div>
 </div>
 @endforeach
