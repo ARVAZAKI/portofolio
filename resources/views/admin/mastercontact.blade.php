@@ -55,7 +55,7 @@
     <script>
       function show(id,e) {
           e.preventDefault();
-          $.get('/masterproject/' + id, function(data) {
+          $.get('/mastercontact/' + id, function(data) {
               $('#contact').html(data);
           })
       }
