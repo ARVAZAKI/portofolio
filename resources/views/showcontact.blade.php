@@ -6,7 +6,7 @@
 @foreach($data as $contact)
 <div class="card">
 <div class="card-header">
-    Kontak siswa
+
 </div>
 <div class="card-body">
     <h6>Deskripsi kontak : {{ $contact->deskripsi}}</h6>

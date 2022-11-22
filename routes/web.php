@@ -34,7 +34,7 @@ Route::get('/mastersiswa/{id_siswa}/hapus',[SiswaController::class,"hapus"] )->n
 Route::get('/masterproject/{id_siswa}/hapus',[projectcontroller::class,"hapus"] )->name('masterproject.hapus');
 Route::get('/masterproject/create/{id_siswa}',[projectcontroller::class,"create"]);
 // Route::get('/masterproject/hapus',[ProjectController::class,"hapus"] )->name('masterproject.hapus');
-Route::get('/mastercontact/{id_siswa}/hapus',[ContactController::class,"hapus"] )->name('mastercontact.hapus');
+Route::get('/mastercontact/{id_siswa}/destroy',[ContactController::class,"hapus"] )->name('mastercontact.destroy');
 Route::get('/mastercontact/create/{id_siswa}',[ContactController::class,"create"]);
 route::resource('/mastersiswa', SiswaController::class)->middleware('auth');
 route::resource('/mastercontact', ContactController::class)->middleware('auth');
