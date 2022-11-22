@@ -29,7 +29,7 @@
                                       <a onclick="show('{{ $item->id }}', event)" class="btn btn-primary btn-circle btn-sm">
                                           <i class="fas fa-eye"></i>
                                       </a>
-                                      <a href="mastercontact/create/{{ $siswa->id}}" class="btn btn-warning btn-circle btn-sm">
+                                      <a href="mastercontact/create/{{ $item->id}}" class="btn btn-warning btn-circle btn-sm">
                                         <i class="fas fa-plus"></i>
                                       </a>
                                   </td>
