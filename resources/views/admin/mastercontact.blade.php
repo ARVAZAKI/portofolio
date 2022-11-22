@@ -42,23 +42,23 @@
       </div>
     </div>
     <div class="col">
-      <div class="card shadow mb-4">
-          <div class="card-header py-3">
-        Kontak siswa    
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                kontak siswa
+            </div>
+            <div class="card-body" id="contact">
+              
+            </div>
         </div>
-          <div class="card-body" id="contact">
-            
-          </div>
       </div>
-    </div>
-</div>
-  <script>
-    function show(id,e) {
-        e.preventDefault();
-        $.get('/mastercontact/' + id, function(data) {
-            $('#contact').html(data);
-        })
-    }
-    
-</script>
+  </div>
+    <script>
+      function show(id,e) {
+          e.preventDefault();
+          $.get('/masterproject/' + id, function(data) {
+              $('#contact').html(data);
+          })
+      }
+      
+  </script>
 @endsection
