@@ -51,6 +51,7 @@ class ContactController extends Controller
             'deskripsi' => 'required'
         ],$messages);
         Kontak::create([
+            'id_siswa' => $request->id_siswa,
             'id_jenis' => $request->id_jenis,
             'deskripsi' => $request->deskripsi
         ]);
