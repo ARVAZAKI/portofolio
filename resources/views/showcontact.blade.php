@@ -1,9 +1,9 @@
 
-@if ($kontak->isEmpty())
+@if ($data->isEmpty())
 <h6 class="text-center">Siswa tidak memiliki kontak</h6>
 @else
 
-@foreach($kontak as $contact)
+@foreach($data as $contact)
 <div class="card">
 <div class="card-header">
     {{ $contact->deskripsi}}
