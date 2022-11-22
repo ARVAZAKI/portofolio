@@ -9,8 +9,9 @@
     {{ $contact->jenis_kontak}}
 </div>
 <div class="card-body">
-    <h6>jenis kontak : {{ $contact->jenis_kontak}}</h6>
-
+    @foreach ($data->jenis_kontak as $p)
+            <h6>contact : {{ $p->jenis_kontak }}</h6>
+            @endforeach
     <h6>Deskripsi kontak : {{ $contact->deskripsi}}</h6>
     
 </div>
