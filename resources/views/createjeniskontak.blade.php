@@ -1,5 +1,5 @@
 @extends('admin.app')
-@section('title','Create contact')
+@section('title','Create jenis kontak')
 @section('content-title')
 @section('content')
 <div class="row">
@@ -19,26 +19,19 @@
             </div>
             @endif
 
-                <form method ="POST" enctype ="multipart/form-data" action="{{route('mastercontact.store')}}">
+                <form method ="POST" enctype ="multipart/form-data" action="{{route('masterjeniskontak.store')}}">
                     @csrf
-                    <h3>Create Contact - {{ $siswa->nama }}</h3>
                     <div class = "form-group">
-                        <label for="id_siswa"></label>
-                        <input type="hidden" class="form-control" id="id_siswa" name="id_siswa" value = "{{ $siswa->id}} ">
+                        <label for="id_jenis"></label>
+                        <input type="hidden" class="form-control" id="id_jenis" name="id_jenis" value = "{{ old('id_jenis')}} ">
                     </div>
                     <div class = "form-group">
-                        <label for="id_jenis">id jenis kontak</label>
-                        <input type="text" class="form-control" id="id_jenis" name="id_jenis" value = "{{ old('id_jenis')}} ">
-                    </div>
-   
-
-                    <div class = "form-group">
-                        <label for="deskripsi">deskripsi</label>
-                        <input type="text" class="form-control" id="deskripsi" name="deskripsi" value = "{{ old('deskripsi')}}">
+                        <label for="jenis_kontak">jenis kontak</label>
+                        <input type="text" class="form-control" id="jenis_kontak" name="jenis_kontak" value = "{{ old('jenis_kontak')}}">
                     </div>
                     <div class="form-group">
                         <input type ="submit" class="btn btn-success" value="Simpan">
-                        <a href="{{ route('mastercontact.index') }}" class="btn btn-danger">Batal</a>
+                        <a href="{{ route('masterjeniskontak.index') }}" class="btn btn-danger">Batal</a>
                     </div>
                     
                 </form>

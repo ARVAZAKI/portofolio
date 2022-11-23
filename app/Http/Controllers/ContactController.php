@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Kontak;
 use App\Models\Siswa;
+use App\Models\Kontak;
+use App\Models\JenisKontak;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ContactController extends Controller
 {
@@ -17,6 +19,7 @@ class ContactController extends Controller
         $kontak = Kontak::all();
         $siswa = Siswa::all();
         return view('admin.mastercontact',compact('kontak','siswa'));
+
     }
 
     /**

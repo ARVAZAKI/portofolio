@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\JeniskontakController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SiswaController;
@@ -28,6 +29,7 @@ Route::post('/login', [loginController::class, "authenticate"])->name('login.aut
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 Route::get('/siswa', [SiswaController::class, "index"]);
 Route::get('/project', [ProjectController::class, "index"]);
+Route::get('/jeniskontak', [JeniskontakController::class, "index"]);
 Route::get('/contact', [ContactController::class, "index"]);
 Route::get('/dashboard',[DashboardController::class,"index"] );
 Route::get('/mastersiswa/{id_siswa}/hapus',[SiswaController::class,"hapus"] )->name('mastersiswa.hapus');
@@ -35,11 +37,13 @@ Route::get('/masterproject/{id_siswa}/hapus',[projectcontroller::class,"hapus"] 
 Route::get('/masterproject/create/{id_siswa}',[projectcontroller::class,"create"]);
 // Route::get('/masterproject/hapus',[ProjectController::class,"hapus"] )->name('masterproject.hapus');
 Route::get('/mastercontact/{id_siswa}/hapus',[ContactController::class,"hapus"] )->name('mastercontact.hapus');
+Route::get('/masterjeniskontak/{id}/hapus',[JeniskontakController::class,"hapus"] )->name('masterjeniskontak.hapus');
 Route::get('/mastercontact/create/{id_siswa}',[ContactController::class,"create"]);
 route::resource('/mastersiswa', SiswaController::class)->middleware('auth');
 route::resource('/mastercontact', ContactController::class)->middleware('auth');
 route::resource('/masterproject', ProjectController::class)->middleware('auth');
-
+route::resource('/masterjeniskontak', JeniskontakController::class)->middleware('auth');
+Route::get('/masterjeniskontak/create/{id}',[JeniskontakController::class,"create"]);
 Route::get('/', function () {
     return view('/login');
 });

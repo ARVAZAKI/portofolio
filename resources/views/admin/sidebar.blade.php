@@ -38,17 +38,22 @@
                 <i class="fas fa-address-book"></i>
                     <span>Master Contact</span></a>
             </li>
-            <hr class="sidebar-divider my-0">
+            <hr class="sidebar-divider">
 
             <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="/masterjeniskontak">
+                    <i class="fas fa-file-signature"></i>
+                    <span>Jenis Kontak</span></a>
+            </li>
+
+
+            <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link" href="/homes">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Profil</span></a>
             </li>
-
-
-            <hr class="sidebar-divider">
 <div class="text-center d-none d-md-inline">
     <button class="rounded-circle border-0" id="sidebarToggle"></button>
 </div>

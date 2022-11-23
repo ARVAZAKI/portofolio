@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\JenisKontak;
 use App\Models\Kontak;
+use App\Models\JenisKontak;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class JeniskontakController extends Controller
 {
@@ -14,7 +15,9 @@ class JeniskontakController extends Controller
      */
     public function index()
     {
-       
+        $kontak = Kontak::all();
+        $jeniskontak = JenisKontak::all();
+        return view('admin.masterjeniskontak',compact('kontak','jeniskontak'));
     }
 
     /**
@@ -22,11 +25,11 @@ class JeniskontakController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
-    {
-        
-    }
 
+    public function create()
+    {
+        return view('createjeniskontak');
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -35,7 +38,18 @@ class JeniskontakController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $messages = [
+            'required' => ':attribute harus diisi',
+
+        ];
+        $this->validate($request,[
+            'jenis_kontak' => 'required|min:3|max:50',
+        ],$messages);
+
+        JenisKontak::create([
+            'jenis_kontak' => $request->jenis_kontak,
+        ]);
+        return redirect('masterjeniskontak');
     }
 
     /**
@@ -46,8 +60,7 @@ class JeniskontakController extends Controller
      */
     public function show($id)
     {
-        $data = Kontak::find($id)->Jeniskontak()->get();
-
+        $data = JenisKontak::find($id)->JenisKontak()->get();
     }
 
     /**
@@ -82,5 +95,12 @@ class JeniskontakController extends Controller
     public function destroy($id)
     {
         
+    }
+    public function hapus($id)
+    {
+        $data=JenisKontak::find($id)->delete();
+        return redirect('masterjeniskontak');
+        
+
     }
 }
