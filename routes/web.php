@@ -38,7 +38,8 @@ Route::get('/masterproject/create/{id_siswa}',[projectcontroller::class,"create"
 // Route::get('/masterproject/hapus',[ProjectController::class,"hapus"] )->name('masterproject.hapus');
 Route::get('/mastercontact/{id_siswa}/hapus',[ContactController::class,"hapus"] )->name('mastercontact.hapus');
 Route::get('/masterjeniskontak/{id}/hapus',[JeniskontakController::class,"hapus"] )->name('masterjeniskontak.hapus');
-Route::get('/mastercontact/create/{id_siswa}',[ContactController::class,"create"]);
+Route::get('/mastercontact/{id}/create',[ContactController::class,"buatkontak"])->name('buat.kontak');
+Route::get('/mastercontact/makekontak',[ContactController::class,"makekontak"])->name('make.kontak');
 route::resource('/mastersiswa', SiswaController::class)->middleware('auth');
 route::resource('/mastercontact', ContactController::class)->middleware('auth');
 route::resource('/masterproject', ProjectController::class)->middleware('auth');

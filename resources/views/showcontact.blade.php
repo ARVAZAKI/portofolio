@@ -9,10 +9,11 @@
 
 </div>
 <div class="card-body">
-    <h6>Deskripsi kontak : {{ $contact->deskripsi}}</h6>
+    
+    <h6>kontak : {{ $contact->deskripsi}}</h6>
 </div>
 <div class="card-footer">
-    <a href="{{ route('mastercontact.edit',$contact->id)}}" class="btn btn-se btn-warning"><i class="fas fa-edit"></i></a>
+    {{-- <a href="{{ route('mastercontact.edit',$contact->id)}}" class="btn btn-se btn-warning"><i class="fas fa-edit"></i></a> --}}
     <a href="{{ route('mastercontact.hapus', $contact->id) }}" class="btn btn-se btn-danger"><i class="fas fa-trash"></i></a>
 </div>
 </div>

@@ -19,20 +19,20 @@
             </div>
             @endif
 
-                <form method ="POST" enctype ="multipart/form-data" action="{{route('mastercontact.store')}}">
+                <form method ="GET" enctype ="multipart/form-data" action="{{route('make.kontak')}}">
                     @csrf
                     <h3>Create Contact - {{ $siswa->nama }}</h3>
                     <div class = "form-group">
                         <label for="id_siswa"></label>
                         <input type="hidden" class="form-control" id="id_siswa" name="id_siswa" value = "{{ $siswa->id}} ">
                     </div>
-                    <div class = "form-group">
-                        <label for="id_jenis">id jenis kontak</label>
-                        <input type="text" class="form-control" id="id_jenis" name="id_jenis" value = "{{ old('id_jenis')}} ">
-                    </div>
-   
-
-                    <div class = "form-group">
+                    <select name="id_jenis" id="inputGroupSelect01" class="custom-select">
+                        <option selected>-</option>                    
+                        @foreach ($jenis_kontak as $jns)
+                        <option value="{{$jns->id}}">{{$jns->jenis_kontak}}</option>
+                        @endforeach                   
+                    </select>
+                    <div class = "form-group mt-3">
                         <label for="deskripsi">deskripsi</label>
                         <input type="text" class="form-control" id="deskripsi" name="deskripsi" value = "{{ old('deskripsi')}}">
                     </div>

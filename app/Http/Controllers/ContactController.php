@@ -18,10 +18,36 @@ class ContactController extends Controller
     {
         $kontak = Kontak::all();
         $siswa = Siswa::all();
-        return view('admin.mastercontact',compact('kontak','siswa'));
+        $jeniskontak = JenisKontak::all();
+        return view('admin.mastercontact',compact('kontak','siswa','jeniskontak'));
 
     }
+    public function buatkontak($id){
+        $siswa = Siswa::find($id);
+        $jenis_kontak = JenisKontak::all();
+        return view('createcontact', compact('siswa','jenis_kontak'));
+    }
 
+    public function makekontak(Request $request){
+        $messages = [
+            'required' => ':attribute harus diisi',
+            'nama' => ':attribute minimal :min karakter',
+            'max' => ':attribute max :max karakter',
+            'numeric' => ':attribute harus angka',
+            'mimes' => 'file :attribute harus bertipe jpg,jpeg,svg,png'
+
+        ];
+        $this->validate($request,[
+            'id_jenis' => 'required',
+            'deskripsi' => 'required'
+        ],$messages);
+        Kontak::create([
+            'id_siswa' => $request->id_siswa,
+            'id_jenis' => $request->id_jenis,
+            'deskripsi' => $request->deskripsi
+        ]);
+        return redirect('mastercontact');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -81,8 +107,8 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        $kontak = Kontak::find($id);
-        return view('editcontact', compact('kontak'));    }
+        $data = Kontak::find($id);
+        return view('editcontact', compact('data'));    }
 
     /**
      * Update the specified resource in storage.

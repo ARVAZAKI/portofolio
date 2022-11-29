@@ -22,7 +22,7 @@
                 <form method ="POST" enctype ="multipart/form-data" action="{{ route('mastercontact.update', $data->id) }}">
                     @csrf
                     {{ method_field('PUT') }}
-                    <h3>Edit projet</h3>
+                    <h3>Edit Contact</h3>
                     <div class = "form-group">
                         <input type="hidden" class="form-control" id="id_siswa" name="id_siswa" value = "{{ $data->id_siswa}} ">
                     </div>

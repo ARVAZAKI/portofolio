@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Kontak;
 use App\Models\JenisKontak;
 use Illuminate\Http\Request;
+use App\Models\Siswa;
 use App\Http\Controllers\Controller;
 
 class JeniskontakController extends Controller
@@ -60,7 +61,8 @@ class JeniskontakController extends Controller
      */
     public function show($id)
     {
-        $data = JenisKontak::find($id)->JenisKontak()->get();
+        $data = JenisKontak::find($id);
+   
     }
 
     /**
@@ -73,7 +75,7 @@ class JeniskontakController extends Controller
     {
        
     }
-
+    
     /**
      * Update the specified resource in storage.
      *
